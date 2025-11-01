@@ -1,8 +1,16 @@
 import Block from "./block"; 
 
-const block1 = new Block(1, "a"); 
+/**
+ * Blockchain class
+ */
+export default class Blockchain {
+    blocks: Block[];
 
-block1.hash = "a";
-block1.index = 2;
+    /**
+     * Creates a new blockchain
+     */
+    constructor(){
+        this.blocks = [new Block(0,"genesis")];
+    }
 
-console.log({ block1, valid: block1.isValid()});
+}
