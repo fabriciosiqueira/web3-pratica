@@ -12,6 +12,9 @@
     //"module": "nodenext",
     "module": "commonjs",
     "moduleResolution": "node",
+    //"module": "nodenext",
+    //"moduleResolution": "nodenext",
+
     //"target": "esnext",
     "target": "es2016",
     "types": [],
@@ -40,10 +43,10 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    //"verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    //"moduleDetection": "force",
     "skipLibCheck": true,
   }
 }
