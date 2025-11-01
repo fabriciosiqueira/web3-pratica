@@ -5,13 +5,17 @@
   "scripts": {
     "dev": "nodemon --watch ./src --exec \"ts-node ./src/blockchain.ts\" -e ts",
     "build": "tsc",
-    "start": "node ./dist/blockchain.js"
+    "start": "node ./dist/blockchain.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
     "nodemon": "^3.1.10",
+    "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
