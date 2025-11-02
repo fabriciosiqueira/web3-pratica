@@ -12,11 +12,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/jest": "^30.0.0",
     "jest": "^30.2.0",
     "nodemon": "^3.1.10",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
   }
 }
