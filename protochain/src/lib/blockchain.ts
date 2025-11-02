@@ -41,6 +41,10 @@ export default class Blockchain {
         return new Validation();
     }
 
+    getBlock(hash:string): Block | undefined {
+        return this.blocks.find(b=> b.hash === hash);
+    }
+
     /**
      * Validates the previous hash and index
      * @returns Return a Boolean if the block is valid.

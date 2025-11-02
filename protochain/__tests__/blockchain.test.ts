@@ -73,6 +73,11 @@ describe("Blockchain tests", () => {
         expect(result.success).toBe(false); // cobre branch de previousHash inválido no addBlock
     });
 
+    test("Should get block)", () => {
+        const blockchain = new Blockchain();
+        const block = blockchain.getBlock(blockchain.blocks[0].hash);
 
+        expect(block).toBeTruthy(); 
+    });
 
 });
