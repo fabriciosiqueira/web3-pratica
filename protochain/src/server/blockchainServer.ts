@@ -1,6 +1,7 @@
 import * as express from "express";
 import * as morgan from "morgan";
 import Blockchain from "../lib/blockchain";
+import Block from "../lib/block";
 
 const PORT:number = 3333;
 
@@ -19,7 +20,7 @@ app.get("/status", (req, res, next)=> {
 })
 
 app.get("/blocks/:indexOrHash", (req, res, next) => {
-    
+
     let block;
     if(/^[0-9]+$/.test(req.params.indexOrHash))
         block = blockchain.blocks[parseInt(req.params.indexOrHash)]
@@ -32,6 +33,19 @@ app.get("/blocks/:indexOrHash", (req, res, next) => {
         return res.json(block)
 })
 
+app.post("/blocks",(req, res, next)=>{
+    if(req.body.hash === undefined) return res.sendStatus(432);
+
+    const block = new Block(req.body as Block);
+    const validation = blockchain.addBlock(block);
+
+    if(validation.success)
+        res.status(201).json(block)
+    else
+        res.status(400).json(validation);
+})
+
 app.listen(PORT, ()=>{
     console.log(`Blockchain server is running at ${PORT}`)
 })
+

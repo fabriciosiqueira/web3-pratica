@@ -13,7 +13,11 @@ export default class Blockchain {
      * Creates a new blockchain
      */
     constructor(){
-        this.blocks = [new Block(this.nextIndex, "", "Genesis Block")];
+        this.blocks = [new Block({
+            index:this.nextIndex,
+            previousHash:"", 
+            data:"Genesis Block"} as Block
+        )];
         this.nextIndex++;
     }
 
@@ -41,6 +45,11 @@ export default class Blockchain {
         return new Validation();
     }
 
+    /**
+     * Finds a block
+     * @param hash The hash used to find the block
+     * @returns Returns the block found
+     */
     getBlock(hash:string): Block | undefined {
         return this.blocks.find(b=> b.hash === hash);
     }
